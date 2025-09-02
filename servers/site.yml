@@ -31,3 +31,14 @@
   roles:
   - fish
   - patrick-interactive
+
+- hosts: workmacs
+  vars:
+    fish_package_user: patrick.quinn-graham
+    patrick_interactive_user: patrick.quinn-graham
+    patrick_interactive_home: /Users/patrick.quinn-graham
+    patrick_interactive_group: staff
+    patrick_interactive_package_user: patrick.quinn-graham
+  roles:
+  - fish
+  - patrick-interactive
