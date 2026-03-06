@@ -42,3 +42,15 @@
   roles:
   - fish
   - patrick-interactive
+
+- hosts: sophieslinux
+  vars:
+    fish_package_user: sophie
+    patrick_interactive_user: sophie
+    patrick_interactive_home: /home/sophie
+    patrick_interactive_group: sophie
+    patrick_interactive_package_user: sophie
+    patrick_interactive_ssh_identity_agent: "~/.1password/agent.sock"
+  roles:
+  - fish
+  - patrick-interactive

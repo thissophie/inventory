@@ -1,7 +1,0 @@
-enable-ssh-support
-default-cache-ttl 600
-max-cache-ttl 7200
-{# linux #}
-{% if ansible_distribution == "Ubuntu" %}
-use-standard-socket
-{% endif %}

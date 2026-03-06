@@ -1,7 +1,6 @@
 ---
 - name: Ensure Fish Is Present (Linux)
   become: true
-  become_user: "{{fish_package_user}}"
   package:
     name: 'fish'
     state: present

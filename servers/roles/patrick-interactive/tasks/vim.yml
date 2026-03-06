@@ -1,7 +1,6 @@
 ---
 - name: Ensure vim Is Present unless on macOS
   become: true
-  become_user: "{{patrick_interactive_package_user}}"
   package:
     name: 'vim'
     state: present
