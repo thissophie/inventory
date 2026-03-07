@@ -7,10 +7,10 @@
     owner: "{{patrick_interactive_user}}"
     group: "{{patrick_interactive_group}}"
   with_items:
-  - ".config/fish"
-  - ".config/fish/functions"
-  - ".config/fish/completions"
-  - ".config/fisherman"
+    - ".config/fish"
+    - ".config/fish/functions"
+    - ".config/fish/completions"
+    - ".config/fisherman"
 
 - name: fish.config
   template:
@@ -26,18 +26,95 @@
     owner: "{{patrick_interactive_user}}"
     group: "{{patrick_interactive_group}}"
   with_items:
-  - "fish_variables"
-  - "fishfile"
-  - "shell_prompt.sh"
-  - "functions/copy-bass.fish"
-  - "functions/fish_prompt.fish"
-  - "functions/rvm.fish"
+    - "fishfile"
+    - "shell_prompt.sh"
+    - "functions/copy-bass.fish"
+    - "functions/fish_prompt.fish"
+    - "functions/rvm.fish"
+
+- name: fish universal variables
+  ansible.builtin.shell: |
+    {% set fish_values = item.value if (item.value is sequence and item.value is not string) else [item.value] %}
+    set --universal {{ item.name }} {% for v in fish_values %}{{ v | quote }} {% endfor %}
+  args:
+    executable: /usr/bin/fish
+  with_items:
+    - name: "fish_color_autosuggestion"
+      value:
+        - "555"
+        - "brblack"
+    - name: "fish_color_command"
+      value: "005fd7"
+    - name: "fish_color_comment"
+      value: "990000"
+    - name: "fish_color_cwd"
+      value: "green"
+    - name: "fish_color_cwd_root"
+      value: "red"
+    - name: "fish_color_end"
+      value: "009900"
+    - name: "fish_color_error"
+      value: "ff0000"
+    - name: "fish_color_escape"
+      value: "00a6b2"
+    - name: "fish_color_history_current"
+      value: "--bold"
+    - name: "fish_color_host"
+      value: "normal"
+    - name: "fish_color_match"
+      value: "--background=brblue"
+    - name: "fish_color_normal"
+      value: "normal"
+    - name: "fish_color_operator"
+      value: "00a6b2"
+    - name: "fish_color_param"
+      value: "00afff"
+    - name: "fish_color_quote"
+      value: "999900"
+    - name: "fish_color_redirection"
+      value: "00afff"
+    - name: "fish_color_search_match"
+      value:
+        - "white"
+        - "--background=brblack"
+    - name: "fish_color_selection"
+      value:
+        - "white"
+        - "--bold"
+        - "--background=brblack"
+    - name: "fish_color_user"
+      value: "brgreen"
+    - name: "fish_color_valid_path"
+      value: "--underline"
+    - name: "fish_greeting"
+      value: "Welcome to a Sophie machine (TODO: add the version of this config that is deployed)"
+    - name: "fish_pager_color_completion"
+      value: "normal"
+    - name: "fish_pager_color_description"
+      value:
+        - "B3A06D"
+        - "yellow"
+    - name: "fish_pager_color_prefix"
+      value:
+        - "white"
+        - "--bold"
+        - "--underline"
+    - name: "fish_pager_color_progress"
+      value:
+        - "brwhite"
+        - "--background=cyan"
+    - name: "nvm_default_packages"
+      value: "corepack"
+    - name: "nvm_default_version"
+      value: "latest"
+  become: true
+  become_user: "{{patrick_interactive_user}}"
 
 - name: get bass
   git:
     repo: https://github.com/edc/bass
     dest: "{{patrick_interactive_home}}/.config/fisherman/bass"
-  become: yes
+  become: true
   become_user: "{{patrick_interactive_user}}"
 
 - name: Link bass
@@ -48,8 +125,8 @@
     owner: "{{patrick_interactive_user}}"
     group: "{{patrick_interactive_group}}"
   with_items:
-  - "__bass.py"
-  - "bass.fish"
+    - "__bass.py"
+    - "bass.fish"
 
 - name: "vimrc"
   copy:
@@ -57,4 +134,3 @@
     dest: "{{patrick_interactive_home}}/.vimrc"
     owner: "{{patrick_interactive_user}}"
     group: "{{patrick_interactive_group}}"
-
