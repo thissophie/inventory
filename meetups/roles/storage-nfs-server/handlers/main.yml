@@ -1,3 +1,0 @@
----
-- name: exportfs
-  command: exportfs -r

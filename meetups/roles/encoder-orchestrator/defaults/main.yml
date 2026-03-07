@@ -1,3 +1,0 @@
----
-encoder_orchestrator_resque_hostname: resque-web
-encoder_orchestrator_api_hostname: orchestrator
