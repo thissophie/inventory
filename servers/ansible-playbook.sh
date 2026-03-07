@@ -7,15 +7,12 @@ if [ "$#" -lt 1 ]; then
     exit
 fi
 
-# TODO: clone PLAYBOOK_REPO if not present, git pull if it is.
-#PLAYBOOK_REPO=../../debconf-ansible
-#PLAYBOOKS="$PLAYBOOK_REPO/site.yml site.yml"
 PLAYBOOKS="site.yml"
 
 LIMIT_FILTER=$1
 shift
 
-ANSIBLE_USER=${ANSIBLE_USER:-patrick}
+ANSIBLE_USER=${ANSIBLE_USER:-$(id -un)}
 
 ansible-playbook \
     --diff \
