@@ -12,9 +12,6 @@ Host *
   ServerAliveCountMax 3
   ServerAliveInterval 60
   KeepAlive yes
-{% if use_secretive %}
-	IdentityAgent /Users/patrick/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
-{% endif %}
 {% if patrick_interactive_ssh_identity_agent is defined %}
   IdentityAgent "{{ patrick_interactive_ssh_identity_agent }}"
 {% endif %}

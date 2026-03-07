@@ -1,7 +1,0 @@
----
-- name: Ensure Mosh Is Present
-  become: true
-  package:
-    name: 'mosh'
-    state: present
-

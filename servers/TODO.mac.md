@@ -1,15 +1,3 @@
-# Make fish the default shell
-
-Should be as simple as adding the `users` role, and overriding the `users` variable so we can set the shell
-
-```yaml
-users:
-- name: patrick
-  github_username: thepatrick
-  groups: sudo
-  shell: /usr/bin/fish
-```
-
 # Default apps on a macOS machine
 
 ```bash

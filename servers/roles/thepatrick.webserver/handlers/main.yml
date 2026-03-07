@@ -1,5 +1,0 @@
----
-- name: reload thepatrick-webserver-caddy
-  docker_container:
-    name: thepatrick-webserver-caddy
-    restart: yes

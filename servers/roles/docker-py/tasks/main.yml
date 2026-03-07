@@ -1,7 +1,0 @@
----
-- apt:
-    state: latest
-    name: python-pip
-
-- pip:
-    name: docker

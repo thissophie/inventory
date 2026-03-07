@@ -1,22 +1,4 @@
 ---
-- hosts: basics
-  roles:
-  - fish
-  - role: users 
-    tags: users
-  - weareinteractive.sudo
-  - ssh-lockdown
-
-- hosts: servers
-  roles:
-  - mosh
-  - patrick-interactive
-
-- hosts: docker
-  roles:
-  - geerlingguy.docker
-  - docker-py
-
 - hosts: macs
   vars:
     fish_package_user: patrick
