@@ -6,38 +6,9 @@
 #   - You can enter hostnames or ip addresses
 #   - A hostname/ip can be a member of multiple groups
 
-[basics]
-dc4-syd.thepatrick.cloud
-ansible1-syd.thepatrick.cloud
-10.8.12.10
-10.8.12.11
-10.8.12.12
-10.2.8.50
-10.2.8.51
-10.2.8.52
-10.2.8.60
-10.2.8.61
-10.2.8.62
-
-#[google-cloud-sdk]
-#ansible1-syd.thepatrick.cloud
-
-[servers]
-ansible1-syd.thepatrick.cloud
-
-# [docker]
-# argon-syd.thepatrick.cloud
 
 [macs]
-rachael.thepatrick.cloud
-serenity.thepatrick.cloud
-kmbp.thepatrick.cloud
-ursa.thepatrick.cloud
-freya.thepatrick.cloud
-harper.thepatrick.cloud
-mia.thepatrick.cloud
-
-pqg2022.corp.kasada.io
+socks
 
 [workmacs]
 Mac-9QJ9D7.corp.kasada.io

@@ -20,9 +20,8 @@ time_zone: Australia/Sydney
 domain: thepatrick.cloud
 
 # Git repos:
-ansible_repo: https://github.com/thepatrick/inventory.git
-ansible_branch: master
+ansible_repo: https://github.com/thissophie/inventory.git
+ansible_branch: main
 ansible_repo_dir: servers
 
 use_secretive: false
-git_sign_commits: false

@@ -12,11 +12,6 @@
   - mosh
   - patrick-interactive
 
-- hosts: google-cloud-sdk
-  roles:
-  - google-cloud-sdk
-
-
 - hosts: docker
   roles:
   - geerlingguy.docker
@@ -28,6 +23,7 @@
     patrick_interactive_home: /Users/patrick
     patrick_interactive_group: staff
     patrick_interactive_package_user: patrick
+    patrick_interactive_ssh_identity_agent: "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
   roles:
   - fish
   - patrick-interactive
@@ -39,6 +35,7 @@
     patrick_interactive_home: /Users/patrick.quinn-graham
     patrick_interactive_group: staff
     patrick_interactive_package_user: patrick.quinn-graham
+    patrick_interactive_ssh_identity_agent: "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
   roles:
   - fish
   - patrick-interactive

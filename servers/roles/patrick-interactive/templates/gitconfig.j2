@@ -1,16 +1,6 @@
 [user]
     name = Sophie Quinn-Graham
     email = 7331+thissophie@users.noreply.github.com
-{% if git_sign_commits %}
-    signingkey = {{git_sign_commits}}
-{% endif %}
-
-{% if git_sign_commits %}
-[commit]
-    gpgSign = true
-[tag]
-    forceSignAnnotated = true
-{% endif %}
 
 [core]
     pager = diff-so-fancy | less --tabs=2 -RFX
